@@ -8,7 +8,7 @@ require('dotenv').config()
 
 const { Configuration, OpenAIApi } = require("openai");
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: process.env.API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 
@@ -16,10 +16,10 @@ app.post('/images', async (req, res) => {
     try {
         const response = await openai.createImage({
             prompt: "A cute baby sea otter",
-            n: 4,
+            n: 2,
             size: "512x512",
         });
-        console.log(response);
+        console.log(response.data.data);
         res.send(response.data.data);
     } catch (error) {
         console.error(error);
