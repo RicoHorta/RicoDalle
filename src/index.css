@@ -25,6 +25,7 @@ p {
 
 .search-section {
   width: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,4 +76,25 @@ p {
 
 .input-container button:active {
   background-color: #cacaca;
+}
+
+.image-section {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+.image-section img {
+  margin: 1px;
+  min-width: 250px;
+  max-width: 33%;
+  flex-grow: 1;
+}
+
+@media(max-width: 556px) {
+  .image-section img {
+    max-width: 100%;
+  }
 }

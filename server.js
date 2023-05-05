@@ -13,10 +13,11 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 app.post('/images', async (req, res) => {
+
     try {
         const response = await openai.createImage({
-            prompt: "A cute baby sea otter",
-            n: 2,
+            prompt: req.body.message,
+            n: 10,
             size: "512x512",
         });
         console.log(response.data.data);
