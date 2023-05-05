@@ -2,17 +2,17 @@
 import { useState } from "react"
 
 const App = () => {
-  //OPÇÕES DE SUPRISE ME
+  //OPÇÕES DE SUPRISE-ME
   const [images, setImages] = useState(null)
   const [value, setValue] = useState(null)
   const surpriseOptions = [
     'Ostra azul comendo um melão',
-    'Tubarão colorido falando ao telefone',
+    'Tubarão estilo Matisse falando ao telefone',
     'Abacaxi tomando sol na ilha',
   ]
 
-  const SurpriseMe = () => {
-    const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.lenght)]
+  const surpriseMe = () => {
+    const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)]
     setValue(randomValue)
   }
 
@@ -42,7 +42,7 @@ const App = () => {
     <div className="app">
       <section className="search-section">
         <p>Forneça uma descrição detalhada
-          <span className="surprise" onClick={SurpriseMe}>Surpreenda-me</span>
+          <span className="surprise" onClick={surpriseMe}>Surpreenda-me</span>
         </p>
         <div className="input-container">
 
@@ -56,7 +56,7 @@ const App = () => {
       </section>
       <section className="image-section">
         {images?.map((image, _index) => (
-          <img key={_index} src="imgage.url" alt={`Imagem gerada em ${value}`} />
+          <img key={_index} src="image.url" alt={`Imagem por RicoAI baseada em ${value}`} />
         ))}
       </section>
     </div>
